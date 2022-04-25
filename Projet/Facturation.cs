@@ -115,6 +115,8 @@ namespace Projet
         {
             //var commande = CommandeFactory.GetInfoByid(commandeId);
             var clientInformation = CommandeController.GetClientInformationById(commandeId, db);
+            var date = PrestationController.GetDateFromDatabaseById(commandeId, db);
+            var numero = PrestationController.GetNumeroFromDatabaseById(commandeId, db);
 
             var document = new Document();
             var page = document.Pages.Add();
@@ -122,10 +124,10 @@ namespace Projet
 
             var row = table.Rows.Add();
             // Disalow text wrapping
-            row.Cells.Add().Paragraphs.Add(new HtmlFragment($"<h2>Facture</h2><br> {clientInformation}"));
+            row.Cells.Add().Paragraphs.Add(new HtmlFragment($"<h2>Facture n°{numero} </h2><br> <br><br><br>{DefaultPrestationService.RenderDefaultString()}"));
+            row.Cells.Add().Paragraphs.Add(new HtmlFragment($"<span></span>"));
             row.Cells.Add().Paragraphs.Add(new HtmlFragment("<span></span>"));
-            row.Cells.Add().Paragraphs.Add(new HtmlFragment("<span></span>"));
-            row.Cells.Add().Paragraphs.Add(new HtmlFragment($"<br><br><br><br> {DefaultPrestationService.RenderDefaultString()}"));
+            row.Cells.Add().Paragraphs.Add(new HtmlFragment($"<br>{date}<br> <br><br><br><br><br> {clientInformation}"));
             
             page.Paragraphs.Add(table);
 
@@ -135,6 +137,9 @@ namespace Projet
             // Prestations
             // Display prestations in columns with HtmlFragment
             var prestations = PrestationController.GetPrestationById(commandeId, db);
+            
+
+
 
             foreach (var prestation in prestations) page.Paragraphs.Add(new TextFragment($"1                   {prestation}"));
             
@@ -166,6 +171,7 @@ namespace Projet
         // SELECT SUM(prestation.prix)FROM prestation, ligne WHERE ligne.idcommande =10
     }
 
+   
     internal static class CommandeController
     {
         public static ClientInformation GetClientInformationById(int commandeId, MySqlConnection db)
@@ -219,6 +225,7 @@ namespace Projet
 
             return '0' + clientInfo;
         }
+      
     }
 
     public static class PrestationController
@@ -234,6 +241,7 @@ namespace Projet
 
             return prestations;
         }
+       
 
         public static string[] GetPrestationTitleFromDatabaseById(int commandeId, MySqlConnection db)
         {
@@ -259,6 +267,25 @@ namespace Projet
 
             return prestationPrices;
         }
+        public static string GetDateFromDatabaseById(int commandId, MySqlConnection db)
+        {
+            var query =
+                $"SELECT commande.date FROM commande where commande.id={commandId}";
+
+            var date = DatabaseFetcherFactory.GetFromDatabase(query, db)[0].Rows[0].ItemArray[0].ToString();
+
+            return date;
+        }
+        public static string GetNumeroFromDatabaseById(int commandId, MySqlConnection db)
+        {
+            var query =
+                $"SELECT commande.id FROM commande where commande.id={commandId}";
+
+            var numero = DatabaseFetcherFactory.GetFromDatabase(query, db)[0].Rows[0].ItemArray[0].ToString();
+
+            return numero;
+        }
+
     }
 
     internal static class DatabaseFetcherFactory

@@ -107,6 +107,8 @@ namespace Projet
             // 
             // dateTimePicker
             // 
+            this.dateTimePicker.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker.Location = new System.Drawing.Point(116, 100);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(250, 27);
