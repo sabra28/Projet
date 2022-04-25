@@ -153,7 +153,9 @@ namespace Projet
                 var idPrestation = dataGridViewPrestation.Rows[x].Cells[0].Value.ToString();
                 commande.ajouterLigne(int.Parse(idPrestation), int.Parse(idcommande));
             }
+            
         }
+
 
         private void recapfacture_Click(object sender, EventArgs e)
         {

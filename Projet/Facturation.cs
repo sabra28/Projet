@@ -132,7 +132,7 @@ namespace Projet
             page.Paragraphs.Add(table);
 
             page.Paragraphs.Add(new HtmlFragment("<br><br><hr>"));
-            page.Paragraphs.Add(new HtmlFragment("<h3>QTE                   DESIGNATION                    PRIX 	&nbsp;	&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;TOTAL </h3>"));
+            page.Paragraphs.Add(new HtmlFragment("<h3>QTE                   DESIGNATION                    PRIX 	 </h3>"));
             page.Paragraphs.Add(new HtmlFragment("<hr><br>"));
             // Prestations
             // Display prestations in columns with HtmlFragment
