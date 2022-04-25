@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\sabra\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\sabra\\.nuget\\packages"
+    ]
+  }
+}
