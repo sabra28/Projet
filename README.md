@@ -1,4 +1,4 @@
-# Project 
+# Projet 
 
 Prestation de services est un logiciel de facturation pour un autoentrepreneur
 
@@ -7,7 +7,6 @@ Prestation de services est un logiciel de facturation pour un autoentrepreneur
 Logiciel permettant d'ajouter, modifier, supprimer des clients et des prestations puis de créer des factures selon les prestations choisies.
 Avant de commencer, vous pouvez visualiser mon mcd : "mcdpresta.png" et mon use case "usecase.png"
 
-## Getting Started
 
 ### PRÉREQUIS ET INSTALLATION :
 
