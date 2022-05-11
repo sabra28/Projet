@@ -17,8 +17,8 @@ Avant de commencer, vous pouvez visualiser mon mcd : "mcdpresta.png" et mon use 
 - Cliquer sur CODE >> download ZIP
 - Décomposer le dossier 
 - Importer le .sql dans PHPMYADMIN (LANCER WAMP AVANT)  
-- Vérifier que l'id:root et mdp:  (dans PHPMYADMIN) si cela n'est pas le cas →
-Aller dans le fichier Projet/Projet/MyDATABASE.cs ligne 20 (changer en fonction de votre identifiant)
+- Vérifier que l'id:root et mdp:  (dans PHPMYADMIN) si cela n'est pas le cas
+ → Aller dans le fichier Projet/Projet/MyDATABASE.cs ligne 20 (changer en fonction de votre identifiant)
 Ainsi que pour valider les tests unitaires, il faut avoir le bon id et mdp, veuillez modifier si ce ne sont pas les mêmes : \Projet\Projet.Tests\unitTest1.cs ligne14
 
 
