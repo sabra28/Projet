@@ -1,62 +1,33 @@
-# Project Title
+# Project 
 
-Simple overview of use/purpose.
+Prestation de services est un logiciel de facturation pour un autoentrepreneur
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+Logiciel permettant d'ajouter, modifier, supprimer des clients et des prestations puis de créer des factures selon les prestations choisies.
+Avant de commencer, vous pouvez visualiser mon mcd : "mcdpresta.png" et mon use case "usecase.png"
 
 ## Getting Started
 
-### Dependencies
+### PRÉREQUIS ET INSTALLATION :
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+- Visual studio 2019
+- Wamp
+- Winrar (pour décomposer le fichier, facultatif)
+- Cliquer sur CODE >> download ZIP
+- Décomposer le dossier 
+- Importer le .sql dans PHPMYADMIN (LANCER WAMP AVANT)  
+- Vérifier que l'id:root et mdp:  (dans PHPMYADMIN) si cela n'est pas le cas →
+Aller dans le fichier Projet/Projet/MyDATABASE.cs ligne 20 (changer en fonction de votre identifiant)
+Ainsi que pour valider les tests unitaires, il faut avoir le bon id et mdp, veuillez modifier si ce ne sont pas les mêmes : \Projet\Projet.Tests\unitTest1.cs ligne14
 
-### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+### Utilisation
 
-### Executing program
+- Lancer wamp si ce n'est pas déjà effectuer
+- Ouvrir le fichier Projet.sln 
+- Cliquer sur le Projet en haut
+Ps : Merci de ne pas supprimer le client 1 (ARNAUD) de la commande 11, car un test a été effectuer pour vérifier ses prestations.
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+Pour visualiser les factures : \Projet\Projet\bin\Debug\net5.0-windows  >> facture-le nom du client.pdf
 
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
