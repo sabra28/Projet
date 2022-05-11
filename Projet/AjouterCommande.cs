@@ -109,7 +109,7 @@ namespace Projet
 
         public void AfficherPrestation()
         {
-            var sqlCmd = "SELECT id,prestation FROM `prestation`";
+            var sqlCmd = "SELECT id,prestation FROM `prestation` where isActive=1 ";
             var reader = new MySqlDataAdapter(sqlCmd, db);
             var cbuilder = new MySqlCommandBuilder(reader);
             var ds = new DataSet();

@@ -48,6 +48,7 @@ namespace Projet
         private void Facturation_Load(object sender, EventArgs e)
         {
             AfficherCommandes();
+            AfficherTotale();
             //Afficherpresta();
         }
 
@@ -92,6 +93,18 @@ namespace Projet
             reader.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
             db.Close();
+        }
+        public void AfficherTotale()
+        {
+            var sqlCmd =
+                  $"SELECT SUM(prestation.prix) as CA FROM prestation, ligne , commande WHERE ligne.idcommande=commande.id";
+            var reader = new MySqlDataAdapter(sqlCmd, db);
+            var cbuilder = new MySqlCommandBuilder(reader);
+            var ds = new DataSet();
+            reader.Fill(ds);
+            dataGridView3.DataSource = ds.Tables[0];
+            db.Close();
+
         }
 
         private void dataGridViewFacture_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -168,10 +181,21 @@ namespace Projet
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AfficherTotale();
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         // SELECT SUM(prestation.prix)FROM prestation, ligne WHERE ligne.idcommande =10
     }
 
-   
+
     internal static class CommandeController
     {
         public static ClientInformation GetClientInformationById(int commandeId, MySqlConnection db)
